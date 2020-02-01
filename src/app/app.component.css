@@ -1,0 +1,20 @@
+form {
+  margin-top: 2rem;
+}
+
+#formatSelect {
+  font-weight: 700;
+}
+
+#intervalSelect {
+  font-weight: 700;
+}
+
+.btn-success {
+  width: 100%
+}
+
+#pasteMacs.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+

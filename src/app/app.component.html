@@ -1,0 +1,61 @@
+<nav class="navbar navbar-dark bg-dark">
+ <h2 class="navbar-brand">M.A.C. Address Format Converter</h2>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+      <form [formGroup]="macForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label for="formatSelect">Format Character Desired</label>
+            <select 
+              class="form-control" 
+              id="formatSelect" 
+              formControlName="formatSelect"
+              >
+              <option>Dot</option>
+              <option>Dash</option>
+              <option>Colon</option>
+              <option>None</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="intervalSelect">Interval Desired</label>
+            <select class="form-control" id="intervalSelect" formControlName="intervalSelect" >
+              <option>4</option>
+              <option>2</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="pasteMacs">Paste a column of MACs</label>
+            <textarea 
+              class="form-control" 
+              id="pasteMacs" 
+              rows="6" 
+              formControlName="pasteMacs" 
+              placeholder="All MACs need to be in the same format.."
+              spellcheck="false"
+              ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="spitMacs">Formatted MACs</label>
+            <textarea 
+              class="form-control" 
+              formControlName="spitMacs" 
+              id="spitMacs" 
+              rows="6"
+              placeholder="Ctrl+A to select all.."
+              spellcheck="false"
+              ></textarea>
+          </div>
+
+        <button class="btn btn-success" type="submit" [disabled]="this.macForm.invalid">Convert</button>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
