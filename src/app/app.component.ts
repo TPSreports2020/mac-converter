@@ -41,7 +41,7 @@ export class AppComponent  {
   onSubmit() {
 
     // Divide string by variable length
-    function divide(str, length) {
+    const divide = (str, length) => {
       return str.match(new RegExp('.{1,' + length + '}', 'g'));
     }
 
