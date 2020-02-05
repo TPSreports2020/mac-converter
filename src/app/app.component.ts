@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, HostListener } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 // ff:ff:00:00:99:99
@@ -8,11 +8,14 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 // ff:ff:00:00:55:55
 // ff:ff:00:00:44:44
 
+  
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
+
 export class AppComponent  {
   macForm: FormGroup;
   formatNames = {
@@ -20,6 +23,13 @@ export class AppComponent  {
     Dash: '-',
     Colon: ':',
     None: ''
+  }
+
+  @HostListener('document:keypress', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'Enter' ){
+      this.onSubmit();
+    }
   }
 
    ngOnInit() {

@@ -13,6 +13,7 @@
               class="form-control" 
               id="formatSelect" 
               formControlName="formatSelect"
+              (change)="onSubmit()"
               >
               <option>Dot</option>
               <option>Dash</option>
@@ -23,7 +24,12 @@
 
           <div class="form-group">
             <label for="intervalSelect">Interval Desired</label>
-            <select class="form-control" id="intervalSelect" formControlName="intervalSelect" >
+            <select 
+              class="form-control" 
+              id="intervalSelect" 
+              formControlName="intervalSelect"
+              (change)="onSubmit()"
+              >
               <option>4</option>
               <option>2</option>
             </select>
