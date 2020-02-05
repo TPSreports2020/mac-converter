@@ -8,8 +8,6 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 // ff:ff:00:00:55:55
 // ff:ff:00:00:44:44
 
-  
-
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -27,7 +25,7 @@ export class AppComponent  {
 
   @HostListener('document:keypress', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.key === 'Enter' ){
+    if (event.key === 'Enter' && this.macForm.value.pasteMacs.length > 13){
       this.onSubmit();
     }
   }
