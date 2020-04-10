@@ -38,8 +38,8 @@ export class AppComponent  {
       spitMacs: new FormControl(null)
     });
     this.macForm.setValue({
-      formatSelect: 'Dot',
-      intervalSelect: '4',
+      formatSelect: 'Colon',
+      intervalSelect: '2',
       pasteMacs: '',
       spitMacs: ''
     });
