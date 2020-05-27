@@ -1,12 +1,13 @@
 import { Component, OnChanges, HostListener } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
-// ff:ff:00:00:99:99
-// ff:ff:00:00:88:88
-// ff:ff:00:00:77:77
-// ff:ff:00:00:66:66
-// ff:ff:00:00:55:55
-// ff:ff:00:00:44:44
+// ffff.0000.9999
+// ffff.0000.8888
+// ffff.0000.7777
+// ffff.0000.6666
+// ffff.0000.5555
+// ffff.0000.4444
+
 
 @Component({
   selector: 'my-app',
@@ -48,7 +49,7 @@ export class AppComponent  {
 
   onSubmit() {
 
-    // Divide string by variable length
+    // Function to divide string by variable length
     const divide = (str, length) => {
       return str.match(new RegExp('.{1,' + length + '}', 'g'));
     }
@@ -60,7 +61,7 @@ export class AppComponent  {
     let currentFormatChar: string;
     let newMacs = '';
 
-    // Strip whitespaces, split by new lines
+    // Strip input whitespaces, split by new lines
     let macArray = completedForm.pasteMacs.trim().split('\n');
     
     // Determine the currentFormatChar
@@ -80,7 +81,7 @@ export class AppComponent  {
       // Divide by set interval
       macAdd = divide(macAdd, interval);
       // Add formatted mac to final string with attached new line
-      newMacs += (macAdd.join(formatChar) +'\n');
+      newMacs += (macAdd.join(formatChar) + '\n');
     });
     
     // Place the new macs in the spitMacs textarea
